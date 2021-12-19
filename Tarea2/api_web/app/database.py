@@ -13,8 +13,7 @@ DATABASE="tutorial_1"
 PORT=3306
 
 #SQLALCHEMY_DATABASE_URL = "mysql+mysqlconnector://my-api:my-api-password@127.0.0.1:3306/tutorial1"
-SQLALCHEMY_DATABASE_URL = "mysql+mysqlconnector://{DATABASE_USER}:{DATABASE_PASS}@{DATABASE_IP}:{PORT}/{DATABASE}"
-
+SQLALCHEMY_DATABASE_URL = "mysql+mysqlconnector://root:root@"+DATABASE_IP+":3306/tutorial_1"
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
